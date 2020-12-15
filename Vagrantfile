@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
                 ]
             end
 
-            application.vm.box = "ubuntu/trusty64"
+            application.vm.box = "debian/contrib-buster64"
             application.vm.network :private_network, ip: "192.168.30.2#{i}"
             application.ssh.forward_agent = true
             application.vm.synced_folder "./", "/vagrant", :nfs => true, :mount_options => ['vers=3','noatime','actimeo=2', 'tcp', 'fsc']
